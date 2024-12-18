@@ -13,11 +13,12 @@ namespace BoardGame
 
             for (int i = 0; i < cellCount; i++)
             {
-                if (i == 5) Cells.Add(new ForwardCell(i, 3));      // Перемещение на 3 шага вперёд
-                else if (i == 10) Cells.Add(new BackwardCell(i, 2)); // Перемещение на 2 шага назад
-                else if (i == 12) Cells.Add(new BonusTurnCell(i)); // Дополнительный ход
-                else if (i == 15) Cells.Add(new ForwardCell(i, 4)); // Перемещение на 4 шага вперёд
-                else if (i == 18) Cells.Add(new BackwardCell(i, 3)); // Перемещение на 3 шага назад
+                if (i == 5) Cells.Add(new ForwardCell(i, 3));         // Перемещение на 3 шага вперёд
+                else if (i == 10) Cells.Add(new BackwardCell(i, 2));  // Перемещение на 2 шага назад
+                else if (i == 12) Cells.Add(new BonusTurnCell(i));    // Дополнительный ход
+                else if (i == 15) Cells.Add(new SkipTurnCell(i));     // Пропуск хода
+                else if (i == 16) Cells.Add(new SkipTurnCell(i));     // Пропуск хода
+                else if (i == 17) Cells.Add(new SkipTurnCell(i));     // Пропуск хода
                 else Cells.Add(new Cell(i)); // Обычная ячейка
             }
         }

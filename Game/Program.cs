@@ -44,7 +44,7 @@ namespace BoardGame
         {
             Console.Write("Введите количество игроков (от 2 до 4): ");
             int playerCount = int.Parse(Console.ReadLine());
-            int boardSize = 20;
+            int boardSize = 40;
 
             return new Game(playerCount, boardSize);
         }

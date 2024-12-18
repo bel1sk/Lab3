@@ -44,12 +44,27 @@ namespace BoardGame
 
             while (!IsGameOver())
             {
+                var currentPlayer = players[currentPlayerIndex];
+
+                // Проверка на пропуск хода
+                if (currentPlayer.ShouldSkipTurn())
+                {
+                    Console.WriteLine($"\nИгрок {currentPlayer.Name} пропускает ход!");
+                    currentPlayer.DecrementSkipTurn();
+                    SwitchToNextPlayer();
+                    continue;
+                }
+
+                // Игрок выполняет свой ход
                 PlayTurn();
+
+                // Переход к следующему игроку
                 SwitchToNextPlayer();
             }
 
             AnnounceWinner();
         }
+
 
         // Метод выполнения хода текущего игрока
         private void PlayTurn()
